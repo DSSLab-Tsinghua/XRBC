@@ -1,7 +1,7 @@
 # Efficient Asynchronous Cross-Consensus Reliable Broadcast
 
 
-[![Conference](https://img.shields.io/badge/Conference-NDSS%20'25-blue)](https://www.ndss-symposium.org/ndss2026/)
+[![Conference](https://img.shields.io/badge/Conference-NDSS%20'26-blue)](https://www.ndss-symposium.org/ndss2026/)
 [![Data](https://img.shields.io/badge/Data-Zenodo-4c7e9b.svg)](https://zenodo.org/records/16945739)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16945739.svg)](https://doi.org/10.5281/zenodo.16945739)
 
