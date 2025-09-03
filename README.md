@@ -2,7 +2,7 @@
 
 
 [![Conference](https://img.shields.io/badge/Conference-NDSS%20'25-blue)](https://www.ndss-symposium.org/ndss2026/)
-[![Data](https://img.shields.io/badge/Data-Zenodo-4c7e9b.svg)](https://zenodo.org/records/14676377)
+[![Data](https://img.shields.io/badge/Data-Zenodo-4c7e9b.svg)](https://zenodo.org/records/16945739)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16945739.svg)](https://doi.org/10.5281/zenodo.16945739)
 
 
@@ -25,7 +25,7 @@ This artifact demonstrates how to reproduce the results presented in Section 7 o
 Note that all results reported in our paper require access to the Amazon EC2. In this artifact appendix, we present the workflow to reproduce scaled-down experiments using one machine. For readers who are familiar with reproducing the results on EC2, please check the overview instructions.
 
 ## How to Run the experiments
-1. Download the repository from the Zenodo link: https://zenodo.org/records/16945740, unzip it, and navigate to the repo directory (as $Home):
+1. Download the repository from the Zenodo link: https://zenodo.org/records/16945739, unzip it, and navigate to the repo directory (as $Home):
 ```bash
 $ unzip xrbc-ae-25.zip -d xrbc-ae-25
 $ cd xrbc-ae-25
