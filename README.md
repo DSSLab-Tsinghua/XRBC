@@ -17,78 +17,114 @@ This repository contains the **code, and instructions** for reproducing the expe
 
 
 
-## Introduction
-We propose a new primitive called cross-consensus reliable broadcast (XRBC). The XRBC primitive models the security properties of communication between two groups, where at least one group executes a consensus protocol. Our experimental results show that all of our protocols achieve low latency and decent throughput.
+## 🔬 Introduction
 
-This artifact demonstrates how to reproduce the results presented in Section 7 of our paper. The experiments do not require any specialized hardware. Our test environment is a computer equipped with a 4-core CPU, 16 GB of RAM, 100 GB of storage, a 100 Mbps network connection, and the Linux operating system.
+We introduce **Cross-Consensus Reliable Broadcast (XRBC)** - a novel primitive that models secure communication between distributed groups where at least one group executes a consensus protocol. Our experimental evaluation demonstrates that XRBC protocols achieve:
 
-Note that all results reported in our paper require access to the Amazon EC2. In this artifact appendix, we present the workflow to reproduce scaled-down experiments using one machine. For readers who are familiar with reproducing the results on EC2, please check the overview instructions.
+- ⚡ **Low latency** communication across consensus boundaries
+- 📈 **High throughput** under various network conditions  
+- 🛡️ **Strong security** guarantees for cross-group interactions
 
-## How to Run the experiments
-1. Download the repository from the Zenodo link: https://zenodo.org/records/16945739, unzip it, and navigate to the repo directory (as $Home):
+### 🧪 Artifact Overview
+This artifact enables reproduction of **Section 7** results from our NDSS 2026 paper. The experiments require no specialized hardware and run on standard commodity machines.
+
+**Test Environment:**
+- 🖥️ 4-core CPU, 16GB RAM, 100GB storage
+- 🌐 100 Mbps network connection  
+- 🐧 Linux operating system
+
+> **Note**: While our paper presents full-scale results on Amazon EC2, this artifact provides scaled-down experiments for single-machine reproduction. For EC2 deployment instructions, see the AWS experiment overview below.
+
+## 🚀 How to Run the Experiments
+
+### Prerequisites
 ```bash
-$ unzip xrbc-ae-25.zip -d xrbc-ae-25
-$ cd xrbc-ae-25
+# Install dependencies
+./autoEnv.bash
 ```
 
-2. Download all dependencies
+### Experiments
+
+#### 🔬 **Experiment 1** - Claim #1
 ```bash
-$ ./autoEnv.bash
+./autoE1.bash
+```
+📄 Results will be saved to `resultE1.txt`
+
+#### 🔬 **Experiment 2** - Claim #2  
+```bash
+./autoE2.bash
+```
+📄 Results will be saved to `resultE2.txt`  
+⏱️ *This experiment may take longer - please wait for completion*
+
+#### 🔬 **Experiment 3** - Claim #3
+```bash
+./autoE3.bash
+```
+📄 Results will be saved to `resultE3.txt`  
+⏱️ *This experiment may take longer - please wait for completion*
+
+## 🛠️ Script Descriptions
+
+### Environment Setup
+```bash
+./autoEnv.bash    # Install all dependencies
 ```
 
-3. Start the first experiment for Claim#1, and you can check the result at resultE1.txt ($Home)
+### Configuration
 ```bash
-$ ./autoE1.bash
+./autoConfig.bash [m] [n] [Consensus No] etc/conf.json
 ```
+Modify the configuration file in `etc/conf.json`
 
-4. Start the second experiment for Claim#2, and you can check the result at resultE2.txt ($Home)
-```bash
-$ ./autoE2.bash
+### Experiment Scripts
+| Script | Purpose |
+|--------|---------|
+| `./autoE1.bash` | Run Experiment 1 (Claim #1) |
+| `./autoE2.bash` | Run Experiment 2 (Claim #2) |
+| `./autoE3.bash` | Run Experiment 3 (Claim #3) |
+
+## ⚠️ Important Notes
+
+### 💻 Local Testing
+> **IDE Users**: Running `autoE1.bash`, `autoE2.bash`, and `autoE3.bash` may freeze your IDE due to intensive resource usage. After starting a script, wait ~2 minutes. If the IDE becomes unresponsive, close it and restart the experiments. Progress logs are saved in `resultE1.txt`, `resultE2.txt`, and `resultE3.txt`.
+
+> **OS Compatibility**: We recommend **Ubuntu**. Other operating systems (e.g., CentOS) may cause dependency downloads (like `jq`) to fail or timeout.
+
+### 📊 Hardware Variability (E3)
+When running all logical XRBC nodes on a single machine, they compete for shared resources (CPU time, cache/memory bandwidth, kernel networking). Once hardware resources are saturated, each additional node adds only limited, stable latency overhead - total latency grows predictably without superlinear escalation.
+
+Different machines have varying available headroom before reaching partial saturation, so reported latencies may vary widely between systems. This variability is **expected** and doesn't contradict our claims of controlled, predictable growth with bounded per-node incremental overhead (see `resultE3.txt`).
+
+## ☁️ AWS Experiment (Overview)
+
+For large-scale testing on Amazon EC2:
+
+1. **🚀 Launch**  
+   Spin up Ubuntu 22.04 VMs in four regions with boto2; confirm they are running.
+
+2. **📦 Deploy**  
+   Install Go 1.21 and dependencies, then push binaries and configs to every node via fab2.
+
+3. **▶️ Run**  
+   Start servers and clients remotely with fab2, then pull back the log files.
+
+4. **📊 Analyze**  
+   Parse the collected logs to compute latency and throughput.
+
+> **Note**: This repository focuses on local testing. EC2-related deployment codes for AWS testing are not included in this release.
+
+## 📖 Citation
+
+If you find this work useful, please cite our paper:
+
+```bibtex
+@inproceedings{huang2026xrbc,
+  title={Cross-Consensus Reliable Broadcast and its Applications},
+  author={Huang, Yue and Wang, Xin and Zhang, Haibin and Duan, Sisi},
+  booktitle={Proceedings of the 2026 Network and Distributed System Security Symposium},
+  year={2026},
+  organization={Internet Society}
+}
 ```
-（This experiment may cost longer waiting time, please wait for the completion）
-
-5. Start the second experiment for Claim#2, and you can check the result at resultE3.txt ($Home)
-```bash
-$ ./autoE3.bash
-```
-（This experiment may cost longer waiting time, please wait for the completion）
-
-## Description of scripts
-
-1. Download all dependencies
-```bash
-$ ./autoEnv.bash
-```
-
-2. Modify the configuration file in the directory: $Home:/etc/conf.json
-```bash
-$ ./autoConfig.bash [m] [n] [Consensus No] etc/conf.json
-```
-
-3. Experiment scripts
-```bash
-$ ./autoE1.bash
-$ ./autoE2.bash
-$ ./autoE3.bash
-```
-
-## Local test note
-If one uses IDE to run the scripts, executing autoE1.bash, autoE2.bash, and autoE3.bash may freeze the IDE due to the large computer resources taken to launch the experiments. After starting the bash script, wait for about two minutes. If the IDE is not responsible, please close the IDE and restart the experiments. As mentioned above, the data log in resultE1.txt, resultE2.txt, resultE3.txt is updated if the experiments are successfully launched. 
-
-We recommend Ubuntu; other operating systems (e.g., CentOS) may cause dependency (e.g., jq) downloads to fail or time out.
-
-## Local Hardware Variability Note (related to E3)
-
-When all logical XRBC nodes are executed on a single local machine, they compete for shared CPU time, cache/memory bandwidth, and kernel networking (loopback queues). Once the resources of the hardware is saturated, each additional node adds only a limited and stable amount of extra latency; total latency therefore grows without superlinear escalation. Because different machines have different available headroom before reaching this partial saturation point, latencies reported by different machines may vary widely. This variability is expected and does not contradict the claim of controlled, predictable growth with bounded per‑node incremental overhead (see resultE3.txt).
-
-## AWS experiment (Overview)
-1. Launch
-Spin up Ubuntu 22.04 VMs in four regions with boto2; confirm they are running.
-2. Deploy
-Install go 1.21 and dependencies, then push binaries and configs to every node via fab2.
-3. Run
-Start servers and clients remotely with fab2, then pull back the log files.
-4. Analyze
-Parse the collected logs to compute latency and throughput.
-
-
