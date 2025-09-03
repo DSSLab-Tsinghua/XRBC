@@ -1,0 +1,5 @@
+consensus:
+100: CrossConsensus - ra mode
+101: CrossConsensus - abc mode
+103：CrossConsensus - sig group mode
+104: CrossConsensus - deltaBA (reticulum)

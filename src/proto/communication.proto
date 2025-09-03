@@ -1,0 +1,87 @@
+// Implements the network layer services for the library
+
+syntax = "proto3";
+
+package communication;
+option go_package = "proto/communication";
+
+// The service definitions.
+service Send {
+
+  rpc SendMsg (RawMessage) returns (Empty) {}
+  rpc SendRequest (Request) returns (RawMessage) {}
+
+  //Cross-Sig:
+  rpc SendSigRequest (Request) returns (Empty) {}
+  rpc SendReplyRequest (Request) returns (Empty) {}
+  rpc SendConfirmRequest (Request) returns (Empty) {}
+  rpc SendFetchRequest (Request) returns (Empty) {}
+  rpc SendCatchupRequest (Request) returns (Empty) {}
+
+  rpc Join (RawMessage) returns (RawMessage) {}
+
+  rpc RBCSendByteMsg (RawMessage) returns (Empty) {}
+  rpc ABASendByteMsg (RawMessage) returns (Empty) {}
+  rpc PRFSendByteMsg (RawMessage) returns (Empty) {}
+
+  rpc ECRBCSendByteMsg (RawMessage) returns (Empty) {}
+  rpc CBCSendByteMsg (RawMessage) returns (Empty) {}
+  rpc EVCBCSendByteMsg (RawMessage) returns (Empty) {}
+  rpc MVBASendByteMsg (RawMessage) returns (Empty) {}
+  rpc MBASendByteMsg (RawMessage) returns (Empty) {}
+  rpc RetrieveSendByteMsg (RawMessage) returns (Empty) {}
+  rpc SimpleSendByteMsg (RawMessage) returns (Empty) {}
+  rpc EchoSendByteMsg (RawMessage) returns (Empty) {}
+  rpc GCSendByteMsg (RawMessage) returns (Empty) {}
+  rpc SimpleProofSendByteMsg (RawMessage) returns (Empty) {}
+  rpc PlainCBCSendByteMsg (RawMessage) returns (Empty) {}
+  rpc HotStuffSendByteMsg (RawMessage) returns (Empty) {}
+}
+
+enum MessageType {
+    BROADCAST = 0;
+    JOIN = 1; 
+    WRITE = 2;
+    WRITE_BATCH = 3;
+    RECONSTRUCT = 4;
+    TEST_HACSS = 5;
+    QC = 6;
+    QCREP = 7;
+    TIMEOUT = 8;
+    TQC = 9;
+    VIEWCHANGE = 10;
+    NEWVIEW = 11;
+    REC1 = 12;
+    ECHO1 = 13;
+    REC2 = 14;
+    ECHO2 = 15;
+    CROSS = 16;
+    CROSSREPLY = 17;
+    CROSSCONFIRM = 18;
+    CROSSFETCH = 19;
+    CROSSCATCHUP = 20;
+};
+
+message RawMessage {
+  bytes msg = 1;
+  bool result = 2;
+}
+
+// Request with a request type and payload in bytes
+message Request {
+  MessageType type = 1;
+  bytes request = 2;
+  string version = 3;
+}
+
+// Response with a request type and payload in bytes (not empty)
+message Response{
+  MessageType type =1;
+  bytes response = 2;
+  string version = 3;
+  bytes signature = 4;
+}
+
+// Empty response
+message Empty{
+}

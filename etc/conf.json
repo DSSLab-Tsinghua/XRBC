@@ -1,0 +1,272 @@
+{
+  "maxBatchSize": 100000,
+  "maxTxSize": 250,
+  "sleepTimer": 60,
+  "clientTimer": 10000,
+  "broadcastTimer": 100000,
+  "verbose": false,
+  "evalMode": 0,
+  "evalInterval": 10,
+  "cryptoOpt": 0,
+  "local": true,
+  "maliciousNode": false,
+  "maliciousMode": 0,
+  "maliciousNID": "1,2",
+  "splitPorts": false,
+  "logOpt": 0,
+  "consensus": 100,
+  "RBCType": 1,
+  "Volume": 0,
+  "Add": 0,
+  "replicas": [
+    {
+      "shard": "0",
+      "config": [
+        {
+          "id": "0",
+          "host": "localhost",
+          "port": "11000"
+        },
+        {
+          "id": "1",
+          "host": "localhost",
+          "port": "11001"
+        },
+        {
+          "id": "2",
+          "host": "localhost",
+          "port": "11002"
+        },
+        {
+          "id": "3",
+          "host": "localhost",
+          "port": "11003"
+        },
+        {
+          "id": "4",
+          "host": "localhost",
+          "port": "11004"
+        },
+        {
+          "id": "5",
+          "host": "localhost",
+          "port": "11005"
+        },
+        {
+          "id": "6",
+          "host": "localhost",
+          "port": "11006"
+        },
+        {
+          "id": "7",
+          "host": "localhost",
+          "port": "11007"
+        },
+        {
+          "id": "8",
+          "host": "localhost",
+          "port": "11008"
+        },
+        {
+          "id": "9",
+          "host": "localhost",
+          "port": "11009"
+        },
+        {
+          "id": "10",
+          "host": "localhost",
+          "port": "11010"
+        },
+        {
+          "id": "11",
+          "host": "localhost",
+          "port": "11011"
+        },
+        {
+          "id": "12",
+          "host": "localhost",
+          "port": "11012"
+        },
+        {
+          "id": "13",
+          "host": "localhost",
+          "port": "11013"
+        },
+        {
+          "id": "14",
+          "host": "localhost",
+          "port": "11014"
+        },
+        {
+          "id": "15",
+          "host": "localhost",
+          "port": "11015"
+        }
+      ]
+    },
+    {
+      "shard": "1",
+      "config": [
+        {
+          "id": "16",
+          "host": "localhost",
+          "port": "11016"
+        },
+        {
+          "id": "17",
+          "host": "localhost",
+          "port": "11017"
+        },
+        {
+          "id": "18",
+          "host": "localhost",
+          "port": "11018"
+        },
+        {
+          "id": "19",
+          "host": "localhost",
+          "port": "11019"
+        },
+        {
+          "id": "20",
+          "host": "localhost",
+          "port": "11020"
+        },
+        {
+          "id": "21",
+          "host": "localhost",
+          "port": "11021"
+        },
+        {
+          "id": "22",
+          "host": "localhost",
+          "port": "11022"
+        },
+        {
+          "id": "23",
+          "host": "localhost",
+          "port": "11023"
+        },
+        {
+          "id": "24",
+          "host": "localhost",
+          "port": "11024"
+        },
+        {
+          "id": "25",
+          "host": "localhost",
+          "port": "11025"
+        },
+        {
+          "id": "26",
+          "host": "localhost",
+          "port": "11026"
+        },
+        {
+          "id": "27",
+          "host": "localhost",
+          "port": "11027"
+        },
+        {
+          "id": "28",
+          "host": "localhost",
+          "port": "11028"
+        },
+        {
+          "id": "29",
+          "host": "localhost",
+          "port": "11029"
+        },
+        {
+          "id": "30",
+          "host": "localhost",
+          "port": "11030"
+        },
+        {
+          "id": "31",
+          "host": "localhost",
+          "port": "11031"
+        },
+        {
+          "id": "32",
+          "host": "localhost",
+          "port": "11032"
+        },
+        {
+          "id": "33",
+          "host": "localhost",
+          "port": "11033"
+        },
+        {
+          "id": "34",
+          "host": "localhost",
+          "port": "11034"
+        },
+        {
+          "id": "35",
+          "host": "localhost",
+          "port": "11035"
+        },
+        {
+          "id": "36",
+          "host": "localhost",
+          "port": "11036"
+        },
+        {
+          "id": "37",
+          "host": "localhost",
+          "port": "11037"
+        },
+        {
+          "id": "38",
+          "host": "localhost",
+          "port": "11038"
+        },
+        {
+          "id": "39",
+          "host": "localhost",
+          "port": "11039"
+        },
+        {
+          "id": "40",
+          "host": "localhost",
+          "port": "11040"
+        },
+        {
+          "id": "41",
+          "host": "localhost",
+          "port": "11041"
+        },
+        {
+          "id": "42",
+          "host": "localhost",
+          "port": "11042"
+        },
+        {
+          "id": "43",
+          "host": "localhost",
+          "port": "11043"
+        },
+        {
+          "id": "44",
+          "host": "localhost",
+          "port": "11044"
+        },
+        {
+          "id": "45",
+          "host": "localhost",
+          "port": "11045"
+        },
+        {
+          "id": "46",
+          "host": "localhost",
+          "port": "11046"
+        }
+      ]
+    }
+  ],
+  "persistLevel": 3,
+  "partChurn": false,
+  "viewChange": false,
+  "rotatingTime": 5
+}

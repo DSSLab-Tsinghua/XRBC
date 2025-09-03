@@ -1,10 +1,19 @@
 # Efficient Asynchronous Cross-Consensus Reliable Broadcast
 
-This repository contains the implementation and AE experiments of the paper "Efficient Asynchronous Cross-Consensus Reliable Broadcast."
 
 [![Conference](https://img.shields.io/badge/Conference-NDSS%20'25-blue)](https://www.ndss-symposium.org/ndss2026/)
 [![Data](https://img.shields.io/badge/Data-Zenodo-4c7e9b.svg)](https://zenodo.org/records/14676377)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14676377.svg)](https://doi.org/10.5281/zenodo.16945739)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16945739.svg)](https://doi.org/10.5281/zenodo.16945739)
+
+
+This repository contains the **code, and instructions** for reproducing the experiments and results from our paper:
+
+> **Cross-Consensus Reliable Broadcast and its Applications**  
+> Yue Huang, Xin Wang, Haibin Zhang, Sisi Duan  
+> Network and Distributed System Security (NDSS) Symposium 2026  
+> [📄 Paper PDF](https://eprint.iacr.org/2025/1483)
+
+---
 
 
 
