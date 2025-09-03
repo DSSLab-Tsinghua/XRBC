@@ -1,4 +1,4 @@
-# Efficient Asynchronous Cross-Consensus Reliable Broadcast
+# Cross-Consensus Reliable Broadcast and its Applications
 
 
 [![Conference](https://img.shields.io/badge/Conference-NDSS%20'26-blue)](https://www.ndss-symposium.org/ndss2026/)
@@ -26,7 +26,7 @@ We introduce **Cross-Consensus Reliable Broadcast (XRBC)** - a novel primitive t
 - 🛡️ **Strong security** guarantees for cross-group interactions
 
 ### 🧪 Artifact Overview
-This artifact enables reproduction of **Section 7** results from our NDSS 2026 paper. The experiments require no specialized hardware and run on standard commodity machines.
+This artifact enables reproduction of **Section VII** results from our paper. The experiments require no specialized hardware and run on standard commodity machines.
 
 **Test Environment:**
 - 🖥️ 4-core CPU, 16GB RAM, 100GB storage
@@ -123,8 +123,7 @@ If you find this work useful, please cite our paper:
 @inproceedings{huang2026xrbc,
   title={Cross-Consensus Reliable Broadcast and its Applications},
   author={Huang, Yue and Wang, Xin and Zhang, Haibin and Duan, Sisi},
-  booktitle={Proceedings of the 2026 Network and Distributed System Security Symposium},
-  year={2026},
-  organization={Internet Society}
+  booktitle={Network and Distributed System Security (NDSS) Symposium 2026},
+  year={2026}
 }
 ```
